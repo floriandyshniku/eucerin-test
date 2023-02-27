@@ -1,0 +1,60 @@
+.header{
+
+    max-height: 85px;
+    
+    &__branding-wrapper{
+        align-items: center;
+        display: flex;
+        gap: 20px;
+        padding-left: 30px;
+    }
+
+    &__logo{
+        padding: 20px 0px;
+    }
+
+    &__nav-content{
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__flag-item{
+        margin-right: 10px;
+    }
+    
+    &__flag-img{
+        border-radius: 50%;
+        width: 26px;
+    }
+
+    &__lang-selector{
+        display: flex;
+        padding: 2px;
+    }
+
+    &__portal-link{
+        font-size: 13px;
+    }
+
+    &__list-items{
+        display: flex;
+        list-style: none;
+    }
+
+    
+    &__meta-link{
+        text-decoration: none;
+        padding: 20px;
+        font-size: 17px;
+    }
+    
+    &--active::after{
+        content: "";
+        height: 1px;
+        background-color: black;
+        width: 100%;
+    }
+
+   
+}

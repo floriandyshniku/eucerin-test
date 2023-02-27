@@ -1,0 +1,63 @@
+body{
+  overflow-x: hidden;
+}
+h1, h2, h3, h4, p, span, a, ul, li, span, svg, figure{
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.button{
+  background-color: #A70532;
+  border: none;
+  color: white;
+  line-height: 30px;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.button:hover{
+  background-color: #7c0325;
+}
+
+.container {
+  box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+  max-width: 1440px;
+}
+
+.center{
+  justify-content: center;
+}
+
+.mobile-markup{
+  display: none;
+  width: 100%;
+}
+
+.desktop-markup{
+  display: block;
+  width: 100%;
+}
+@media screen and (max-width: 1199px) {
+  .container {
+    padding: 0 40px ;
+  }
+}
+
+@media screen and (max-width: 959px){
+  .mobile-markup{
+    display: block;
+  }
+
+  .desktop-markup{
+    display: none;
+  }
+}

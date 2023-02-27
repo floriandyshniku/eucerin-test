@@ -1,0 +1,50 @@
+.newsletter{
+    
+    &__teaser{
+        box-shadow: 1px 4px 11px 4px gainsboro;
+        display: flex;
+        margin: 50px 0;
+    }
+
+    &__image{
+        object-fit: cover;
+        width: 100%;
+        max-width: fit-content;
+        height: 100%;
+    }
+
+    &__text-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 15px 30px;
+    }
+
+    &__list{
+        margin-top: 30px;
+    }
+
+    &__list-item{
+        margin-left: 18px;
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+
+    &__button{
+        padding: 5px 0;
+    }
+
+}
+
+@media screen and (max-width: 959px){
+    .newsletter{
+
+        &__teaser{
+            display: block;
+        }
+
+        &__button{
+            margin-top: 10px;
+        }
+    }
+}

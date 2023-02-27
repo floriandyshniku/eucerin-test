@@ -1,0 +1,28 @@
+.subnav{
+    // background-color: red;
+    left: 400px;
+    position: absolute;
+    height: 0;
+    top: 0;
+    opacity: 0;
+    width: 400px;
+    visibility: hidden;
+    transition: opacity 0.4s linear;
+
+    &--active{
+        visibility: visible;
+        max-height: 90vh;
+        opacity: 1;
+        height: auto;
+    }
+
+    &__list-items{
+        list-style: none;
+    }
+
+    &__item{
+        margin-left: 20px;
+        padding: 10px;
+    }
+
+}

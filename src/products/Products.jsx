@@ -6,18 +6,44 @@ import product from "../data/product-data";
 
 function Products() {
   const [elements, setElements] = useState([]);
-  const [idCounts, setIdCounts] = useState({})
-  const [idCounter, setCounterId] = useState(0)
+  const [idCounts, setIdCounts] = useState([]);
+  const [idCounter, setIdCounter] = useState(1);
+  const [isRemove, setRemove] = useState(false);
+  /*function addProduct(image, price, id) {
+    if (elements.some((element) => element.id === id)) {
+      setIdCounts(el => [...el, {id: id, counter : idCounter}])
+      setIdCounter(idCounter + 1)
+      return;
+    } 
+    setElements((prevElements) => [...prevElements, { id: id, image: image, price: price}]);
+    setIdCounts(el => [...el, {id: id, counter : 1}])
+    setIdCounter((e) =>  e + 1)
+    console.log(idCounts);
+  }*/
+
+
   function addProduct(image, price, id) {
     if (elements.some((element) => element.id === id)) {
+      // If the item already exists, increment the count for that item
+      setIdCounts((prevIdCounts) =>
+        prevIdCounts.map((idCount) =>
+          idCount.id === id ? { id: id, count: idCount.count + 1 } : idCount
+        )
+      );
       return;
     }
-    setElements((prevElements) => [...prevElements,{ id: id, image: image, price: price }]);
-    setCounterId()
+    // If the item doesn't exist, add it to the elements array and set the count to 1
+    setElements((prevElements) => [
+      ...prevElements,
+      { id: id, image: image, price: price },
+    ]);
+    setIdCounts((prevIdCounts) => [...prevIdCounts, { id: id, count: 1 }]);
   }
+
+
   return (
     <div className="products-overview">
-      <ShoppingSlide data={elements} setData={setElements} />
+      <ShoppingSlide data={elements} setData={setElements} idCounts={idCounts} setIdCounts={setIdCounts}/>
       <div className="container">
         <div className="row">
           {product.map((el, key) => {
@@ -28,6 +54,7 @@ function Products() {
                 price={el.price}
                 index={key}
                 addProduct={addProduct}
+                counter={el.counter}
                 key={key}
               />
             );

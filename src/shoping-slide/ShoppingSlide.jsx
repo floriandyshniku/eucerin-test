@@ -6,8 +6,10 @@ const closeShoppingSlide = ()=> {
     document.querySelector(".shop-nav").classList.remove("shop-nav--active")
 }
 function ShoppingSlide(props) {
-    const removeProduct = (index) => {
+    const removeProduct = (index, id) => {
         const filteredData = props.data.filter((el, i) => i !== index);
+        const removedId = props.idCounts.filter((el, i) => el.id !== id)
+        props.setIdCounts(removedId);
         props.setData(filteredData);
       }
   return (
@@ -30,7 +32,12 @@ function ShoppingSlide(props) {
             {
                 props.data?.map((el, key) => {
                     return (
-                        <li className='shop-nav__products-item' key={key}><ProductCart image={el.image} price={el.price} id={key} removeProduct={removeProduct}/></li>
+                        <li className='shop-nav__products-item' key={key}>
+                            <ProductCart image={el.image} 
+                            price={el.price} idKey={key} 
+                            id={el.id}
+                            removeProduct={removeProduct}
+                            idCounts={props.idCounts}/></li>
                     )
                 })
             }

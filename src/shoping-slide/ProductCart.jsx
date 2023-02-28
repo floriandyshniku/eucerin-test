@@ -4,7 +4,7 @@ function ProductCart(props) {
     
   return (
     <div className='product-cart row'>
-        <div onClick={() => props.removeProduct(props.id)}  className="product-cart__close">
+        <div onClick={() => props.removeProduct(props.idKey, props.id)}  className="product-cart__close">
             <span className="product-cart__close-bar"></span>
         </div>
         <div className="product-cart__picture-content col-lg-4">
@@ -16,8 +16,9 @@ function ProductCart(props) {
             Hyaloron Filler Dagcreme
             Hyaloron Filler Dagcreme
             </p>
-        <p className='product-cart__price'> Price : {props.price}
-        </p>
+        <p className='product-cart__price'> Price : {props.price}</p>
+        {console.log(props.idCounts)}
+        <p className='product-cart__price'> Count : {props.idCounts?.filter[props.idKey]}</p>
         </div>
 
         </div>

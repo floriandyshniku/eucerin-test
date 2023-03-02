@@ -4,7 +4,9 @@ import "./second-nav.scss"
 function SecondNav(props) {
     const closeSubNav = (e)=> {
         e.stopPropagation()
-        document.querySelectorAll(".second-nav")[props.index].classList.remove("second-nav--active");
+        let target = e.target
+        console.log(e.target);
+        target.closest(".second-nav").classList.remove("second-nav--active");
     }
   return (
     <div className="second-nav">

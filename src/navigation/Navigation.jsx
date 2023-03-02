@@ -11,10 +11,12 @@ function Navigation() {
       .classList.remove("navigation--active");
   };
 
-  const openSecondNav = (property, index) => {
-    document
-      .querySelectorAll(".second-nav")
-      [index].classList.add("second-nav--active");
+  const openSecondNav = (property, index, e) => {
+    const target = e.target
+    if (target.querySelector(".second-nav") !== null) {
+      target.querySelector(".second-nav").classList.add("second-nav--active");
+      console.log("nuk eshte null");
+    }
     setActiveProperty(property);
   };
 
@@ -34,15 +36,6 @@ function Navigation() {
                     <li onClick={(e) => openSecondNav(property, key, e)} key={key} className="navigation__sub-list-item">
                       {property.name}
                       <SecondNav  activeProperty={activeProperty} property={property} index={key}/>
-                      {/* <ul className="second-nav__list-item">
-                        {property.properties.map((el, key) => {
-                          return (
-                            <li key={key} className="second-nav__item">
-                              {el}
-                            </li>
-                          );
-                        })}
-                      </ul> */}
                     </li>
                   );
                 })}

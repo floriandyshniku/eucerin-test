@@ -1,17 +1,18 @@
 .second-nav{
     position: absolute;
-    left: 0;
+    left: 999px;
     width: 400px;
     height: 100%;
     background-color: white;
     top: 0;
     visibility: hidden;
     transition: all 0.3s ease;
-    z-index: 300;
+    z-index: -500;
 
     &--active{
-        
         visibility: visible;
+        left: 0;
+        z-index: 500;
     }
 
     &__item{

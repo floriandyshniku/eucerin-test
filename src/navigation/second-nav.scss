@@ -1,0 +1,59 @@
+.second-nav{
+    position: absolute;
+    left: 0;
+    width: 400px;
+    height: 100%;
+    background-color: white;
+    top: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 300;
+
+    &--active{
+        
+        visibility: visible;
+    }
+
+    &__item{
+        padding-left: 30px;
+        padding-bottom: 30px;
+        font-size: 22px;
+    }
+
+    &__list-item{
+        margin-top: 75px;
+    }
+
+    &__title{
+        padding-left: 30px;
+        text-transform: capitalize;
+        padding-bottom: 30px;
+    }
+
+    &__prev-btn{
+        width: 30px;
+        height: 30px;
+        position: relative;
+        left: 30px;
+        top: 30px;
+    }
+    
+    &__bar::after, &__bar::before{
+        position: absolute;
+        content: '';
+        height: 20px;
+        width: 2px;
+        background-color: black;
+        left: 12px;
+        top: 0px;
+    }
+
+    &__bar::after{
+        transform: rotate(45deg);
+    }
+    
+    &__bar::before{
+        top: 14px;
+        transform: rotate(-45deg);
+    }
+}

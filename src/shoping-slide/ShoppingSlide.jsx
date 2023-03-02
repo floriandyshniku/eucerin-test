@@ -14,7 +14,8 @@ function ShoppingSlide(props) {
       }
   return (
     <nav className="shop-nav">
-        <header className="shop-nav__header">
+        <div className="shop-nav__cart-wrapper">
+        <div className="shop-nav__product-wrapper">
             <div onClick={() => closeShoppingSlide()} className="shop-nav__close">
                 <span className="shop-nav__close-bar"></span>
             </div>
@@ -26,9 +27,7 @@ function ShoppingSlide(props) {
                 met hyaluronzuur en SPF 30 
                 is toegevoegd aan uw winkelwagen</p>
             </div>
-        </header>
-        <div className="shop-nav__products-wrapper">
-            <ul className='shop-nav__products-list'>
+        <ul className='shop-nav__products-list'>
             {
                 props.data?.map((el, key) => {
                     return (
@@ -57,11 +56,10 @@ function ShoppingSlide(props) {
             <span className="shop-nav__subtotal-name">subtotal</span>
             </div>
         </div>
+        </div>
         <div className="shop-nav__checkout-pannel">
-            <div className="shop-nav__pay-amount">
-                <span>xczzxczzx</span>
-                <span>xczzxczzx</span>
-                <span>xczzxczzx</span>
+            <div className="shop-nav__pay-content">
+                <span className="shop-nav__amount-to-pay">Total price:</span>
             </div>
         </div>
     </nav>

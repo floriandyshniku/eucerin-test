@@ -1,0 +1,64 @@
+.navigation {
+    width: 400px;
+    position: fixed;
+    height: 100%;
+    background-color: white;
+    left: -100%;
+    top: 0;
+    z-index: 120;
+    transition: all 0.5s ease;
+    padding-top: 75px;
+
+    &--active {
+        left: 0;
+    }
+
+    &__list-items {
+        margin-left: 30px;
+        overflow-y: scroll;
+        height: 85%;
+    }
+
+    &__item-content {
+        color: rgb(180, 175, 175);
+        text-transform: capitalize;
+        font-size: 22px;
+    }
+
+    &__sub-list-item {
+        font-size: 25px;
+        padding: 10px 0;
+        cursor: pointer;
+    }
+
+    &__sub-list {
+        padding: 15px 0;
+    }
+
+    &__close{
+        position: absolute;
+        height: 30px;
+        top: 25px;
+        left: 30px;
+        width: 30px;
+        cursor: pointer;
+    }
+
+    &__close-bar::after, &__close-bar::before{
+        content: "";
+        background-color: rgb(139, 132, 132);
+        position: absolute;
+        z-index: 150;
+        width: 2px;
+        height: 30px;
+        left: 13px;
+    }
+
+    &__close-bar::after{
+        transform: rotate(45deg);
+    }
+
+    &__close-bar::before{
+        transform: rotate(-45deg);
+    }
+}

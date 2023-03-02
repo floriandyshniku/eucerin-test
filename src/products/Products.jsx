@@ -9,17 +9,7 @@ function Products() {
   const [idCounts, setIdCounts] = useState([]);
   const [idCounter, setIdCounter] = useState(1);
   const [isRemove, setRemove] = useState(false);
-  /*function addProduct(image, price, id) {
-    if (elements.some((element) => element.id === id)) {
-      setIdCounts(el => [...el, {id: id, counter : idCounter}])
-      setIdCounter(idCounter + 1)
-      return;
-    } 
-    setElements((prevElements) => [...prevElements, { id: id, image: image, price: price}]);
-    setIdCounts(el => [...el, {id: id, counter : 1}])
-    setIdCounter((e) =>  e + 1)
-    console.log(idCounts);
-  }*/
+
 
 
   function addProduct(image, price, id) {

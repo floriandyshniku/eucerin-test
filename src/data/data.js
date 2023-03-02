@@ -5,10 +5,10 @@ const data = [
         properties: [
             {
                 id: 0,
-                name: "productlijnen",
-                properties: ["anti pigment1", "hypersensitive2", "dermatoclean3",
-                "anti pigment1", "hypersensitive2", "dermatoclean3" ,"anti pigment1", "hypersensitive2", "dermatoclean3"
-                ,"anti pigment1", "hypersensitive2", "dermatoclean3"]
+                name: "productlijn",
+                properties: ["anti pigment1", "hypersecxvcvnsitive2", "dermatoclean3",
+                "anti pigment1", "hypersensitive2", "dermatoclean3" ,"anti pigment1", "hypersensitive2", "dermatoclean3", 
+                "anti pigment1", "hypersensitive2", "dermatoclean3"]
             },
             {
                 id: 1,

@@ -1,11 +1,11 @@
 .product-cart{
 
-    width: 100%;
-    max-height: 200px;
+    width: calc(100% - 20px);
     box-shadow: 1px 1px 7px 1px #c5bcbc;
     border-radius: 3px;
     margin-bottom: 20px;
     padding-bottom: 15px;
+    margin-left: 10px;
 
     &__details-wrapper{
         padding-top: 0px;
@@ -49,5 +49,13 @@
 
     &__close-bar::before{
         transform: rotate(-45deg);
+    }
+
+    &__price-wrapper{
+        display: flex;
+    }
+
+    &__quantity{
+        padding: 10px 5px;
     }
 }

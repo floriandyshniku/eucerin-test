@@ -15,7 +15,6 @@ function Navigation() {
     const target = e.target
     if (target.querySelector(".second-nav") !== null) {
       target.querySelector(".second-nav").classList.add("second-nav--active");
-      console.log("nuk eshte null");
     }
     setActiveProperty(property);
   };

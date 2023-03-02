@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import ProductCart from './ProductCart'
 import  "./shopping-slide.scss"
 
-const closeShoppingSlide = ()=> {
-    document.querySelector(".shop-nav").classList.remove("shop-nav--active")
+const closeShoppingSlide = (e)=> {
+    e.target.closest(".shop-nav").classList.remove("shop-nav--active")
 }
 function ShoppingSlide(props) {
     const removeProduct = (index, id) => {
@@ -16,7 +16,7 @@ function ShoppingSlide(props) {
     <nav className="shop-nav">
         <div className="shop-nav__cart-wrapper">
         <div className="shop-nav__product-wrapper">
-            <div onClick={() => closeShoppingSlide()} className="shop-nav__close">
+            <div onClick={(e) => closeShoppingSlide(e)} className="shop-nav__close">
                 <span className="shop-nav__close-bar"></span>
             </div>
             <div className="shop-nav__title-wrapper">

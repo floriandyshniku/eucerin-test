@@ -5,7 +5,6 @@ function SecondNav(props) {
     const closeSubNav = (e)=> {
         e.stopPropagation()
         let target = e.target
-        console.log(e.target);
         target.closest(".second-nav").classList.remove("second-nav--active");
     }
   return (

@@ -14,7 +14,7 @@ function Products() {
 
   function addProduct(image, price, id) {
     if (elements.some((element) => element.id === id)) {
-      // If the item already exists, increment the count for that item
+      // nese element eziston rrit count per ate Item
       setIdCounts((prevIdCounts) =>
         prevIdCounts.map((idCount) =>
           idCount.id === id ? { id: id, count: idCount.count + 1 } : idCount
@@ -22,7 +22,7 @@ function Products() {
       );
       return;
     }
-    // If the item doesn't exist, add it to the elements array and set the count to 1
+    // nese nuk ekziston shto ne array me count 1
     setElements((prevElements) => [
       ...prevElements,
       { id: id, image: image, price: price },

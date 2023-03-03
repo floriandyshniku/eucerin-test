@@ -3,12 +3,13 @@ import "./card.scss"
 function Card(props) {
 
   const openProductNav = ()=> {
+    console.log("u hap");
     document.querySelector(".shop-nav").classList.add("shop-nav--active")
     document.getElementsByTagName("body")[0].classList.add("overlay")
   }
 
   return (
-    <div  className="product-teaser col-lg-3 col-xs-6">
+    <div  className="product-teaser col-lg-3 col-xs-6" onClick={() => {openProductNav(); props.addProduct(props.image, props.price, props.id, props.index)}}>
         <figure className="product-teaser__picture">
         <img className='product-teaser__img' alt='/' src={props.image} loading="lazy" width="1024" height="1024"></img>
         </figure>

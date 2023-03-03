@@ -43,10 +43,11 @@ function Products() {
   useEffect(()=>{
     document.addEventListener("click", (e) => {
         const target = e.target
-        if (!target.closest(".shop-nav") && !target.closest(".product-teaser__button")
+        if (!target.closest(".shop-nav") && !target.closest(".product-teaser")
             && !target.closest(".product-cart__close")) {
             shopNavRef.current?.classList.remove("shop-nav--active")
             document.getElementsByTagName("body")[0].classList.remove("overlay")
+            console.log("u mbylllllll");
         }
     });
   })               

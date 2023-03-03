@@ -1,5 +1,6 @@
 body{
   overflow-x: hidden;
+  max-width: 100%;
 }
 
 h1, h2, h3, h4, p, span, a, ul, li, span, svg, figure{
@@ -22,6 +23,24 @@ a {
   line-height: 30px;
   font-size: 17px;
   cursor: pointer;
+}
+
+.overlay{
+  position: relative;
+  max-width: calc(100% - 20px);
+  overflow-y: hidden;
+}
+
+.overlay::after{
+  background-color: whitesmoke;
+  z-index: 0;
+  position: absolute;
+  content: "";
+  width: calc(100% - 10px);
+  height: 100%;
+  opacity: 0.8;
+  top: 0;
+
 }
 
 .button:hover{

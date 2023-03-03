@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./products.scss";
 import Card from "./Card";
 import ShoppingSlide from "../shoping-slide/ShoppingSlide.jsx";
@@ -7,17 +7,23 @@ import product from "../data/product-data";
 function Products() {
   const [elements, setElements] = useState([]);
   const [idCounts, setIdCounts] = useState([]);
-  const [idCounter, setIdCounter] = useState(1);
-  const [isRemove, setRemove] = useState(false);
-
-
-
-  function addProduct(image, price, id) {
+  const totalPrice = idCounts
+    .map((el) => {
+      return el.price * el.count;
+    })
+    ?.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+  const totalPriceElement = document.querySelector(".shop-nav__amount-to-pay");
+  if (totalPriceElement !== null) {
+    totalPriceElement.textContent = "Total Price: " + totalPrice + "$";
+  }
+  function addProduct(image, price, id, index) {
     if (elements.some((element) => element.id === id)) {
       // nese element eziston rrit count per ate Item
       setIdCounts((prevIdCounts) =>
         prevIdCounts.map((idCount) =>
-          idCount.id === id ? { id: id, count: idCount.count + 1 } : idCount
+          idCount.id === id
+            ? { id: id, count: idCount.count + 1, price: price }
+            : idCount
         )
       );
       return;
@@ -27,13 +33,33 @@ function Products() {
       ...prevElements,
       { id: id, image: image, price: price },
     ]);
-    setIdCounts((prevIdCounts) => [...prevIdCounts, { id: id, count: 1 }]);
+    setIdCounts((prevIdCounts) => [
+      ...prevIdCounts,
+      { id: id, count: 1, price: price },
+    ]);
   }
 
+  const shopNavRef = useRef(null);
+  useEffect(()=>{
+    document.addEventListener("click", (e) => {
+        const target = e.target
+        if (!target.closest(".shop-nav") && !target.closest(".product-teaser__button")
+            && !target.closest(".product-cart__close")) {
+            shopNavRef.current?.classList.remove("shop-nav--active")
+            document.getElementsByTagName("body")[0].classList.remove("overlay")
+        }
+    });
+  })               
 
   return (
     <div className="products-overview">
-      <ShoppingSlide data={elements} setData={setElements} idCounts={idCounts} setIdCounts={setIdCounts}/>
+      <ShoppingSlide
+        data={elements}
+        setData={setElements}
+        idCounts={idCounts}
+        setIdCounts={setIdCounts}
+        shopNavRef={shopNavRef}
+      />
       <div className="container">
         <div className="row">
           {product.map((el, key) => {

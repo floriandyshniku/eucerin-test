@@ -4,6 +4,7 @@ function Card(props) {
 
   const openProductNav = ()=> {
     document.querySelector(".shop-nav").classList.add("shop-nav--active")
+    document.getElementsByTagName("body")[0].classList.add("overlay")
   }
 
   return (
@@ -20,7 +21,7 @@ function Card(props) {
                 <span className="product-teaser__ml-price">50ml/ 1l = $719</span>
                 <span className="product-teaser__price">$ {props.price}</span>
             </div>
-            <button className="product-teaser__button" onClick={() => {openProductNav(); props.addProduct(props.image, props.price, props.id)}}>In wink</button>
+            <button className="product-teaser__button" onClick={() => {openProductNav(); props.addProduct(props.image, props.price, props.id, props.index)}}>In wink</button>
         </div>
     </div>
   )

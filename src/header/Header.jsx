@@ -35,7 +35,6 @@ function Header() {
         }
     }
     const closeSubnav = (index, e)=> {
-      console.log('close-subnave', e.target);
       const dropdown =  document.querySelectorAll(".dropdown--open")[0]
       const subnav = dropdown.querySelectorAll(".subnav")[index]
       subnav.classList.remove("subnav--active")
@@ -43,8 +42,6 @@ function Header() {
     }
 
     const closeNav = (height, index, e)=> {
-
-      console.log('close-nave');
       const div =  document.querySelectorAll(".dropdown")[index]
       div.style.height = 0 + "px"
       div.classList.remove("dropdown--open")

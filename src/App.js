@@ -7,8 +7,9 @@ import Slider from "./slider/Slider";
 import NewsLetter from "./newsletter/NewsLetter";
 import MobileHeader from "./header/MobileHeader";
 function App() {
+
   return (
-    <div className="App">
+    <div className="app">
       <section className="header-content desktop-markup">
       <Header/>
       </section>

@@ -7,6 +7,7 @@ import product from "../data/product-data";
 function Products() {
   const [elements, setElements] = useState([]);
   const [idCounts, setIdCounts] = useState([]);
+  console.log(elements);
   const totalPrice = idCounts
     .map((el) => {
       return el.price * el.count;
@@ -16,6 +17,7 @@ function Products() {
   if (totalPriceElement !== null) {
     totalPriceElement.textContent = "Total Price: " + totalPrice + "$";
   }
+  
   function addProduct(image, price, id, index) {
     if (elements.some((element) => element.id === id)) {
       // nese element eziston rrit count per ate Item
@@ -47,7 +49,6 @@ function Products() {
             && !target.closest(".product-cart__close")) {
             shopNavRef.current?.classList.remove("shop-nav--active")
             document.getElementsByTagName("body")[0].classList.remove("overlay")
-            console.log("u mbylllllll");
         }
     });
   })               

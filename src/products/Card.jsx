@@ -3,13 +3,12 @@ import "./card.scss"
 function Card(props) {
 
   const openProductNav = ()=> {
-    console.log("u hap");
     document.querySelector(".shop-nav").classList.add("shop-nav--active")
     document.getElementsByTagName("body")[0].classList.add("overlay")
   }
 
   return (
-    <div  className="product-teaser col-lg-3 col-xs-6" onClick={() => {openProductNav(); props.addProduct(props.image, props.price, props.id, props.index)}}>
+    <div  className="product-teaser col-lg-3 col-xs-6"  onClick={() => {openProductNav(); props.addProduct(props.image, props.price, props.id, props.index)}}>
         <figure className="product-teaser__picture">
         <img className='product-teaser__img' alt='/' src={props.image} loading="lazy" width="1024" height="1024"></img>
         </figure>
@@ -22,7 +21,7 @@ function Card(props) {
                 <span className="product-teaser__ml-price">50ml/ 1l = $719</span>
                 <span className="product-teaser__price">$ {props.price}</span>
             </div>
-            <button className="product-teaser__button" onClick={() => {openProductNav(); props.addProduct(props.image, props.price, props.id, props.index)}}>In wink</button>
+            <button className="product-teaser__button">In wink</button>
         </div>
     </div>
   )

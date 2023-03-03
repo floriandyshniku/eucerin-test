@@ -5,7 +5,6 @@ import "./shopping-slide.scss";
 const closeShoppingSlide = (e) => {
   e.target.closest(".shop-nav").classList.remove("shop-nav--active");
   document.getElementsByTagName("body")[0].classList.remove("overlay")
-  console.log("u mbyll");
 };
 
 function ShoppingSlide(props) {

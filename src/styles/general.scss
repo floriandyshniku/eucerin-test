@@ -1,6 +1,6 @@
 body{
   overflow-x: hidden;
-  max-width: 100%;
+  max-width: 100vw;
 }
 
 h1, h2, h3, h4, p, span, a, ul, li, span, svg, figure{
@@ -27,7 +27,7 @@ a {
 
 .overlay{
   position: relative;
-  max-width: calc(100% - 20px);
+  width: 100vw;
   overflow-y: hidden;
   transition: all 0.5s ease;
 }
@@ -37,7 +37,7 @@ a {
   z-index: 0;
   position: absolute;
   content: "";
-  width: calc(100% - 10px);
+  width: 100vw;
   height: 100%;
   opacity: 0.8;
   top: 0;
